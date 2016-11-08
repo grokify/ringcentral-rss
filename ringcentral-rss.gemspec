@@ -6,7 +6,7 @@ version = $1
 Gem::Specification.new do |s|
   s.name        = lib
   s.version     = version
-  s.date        = '2016-11-07'
+  s.date        = '2016-11-08'
   s.summary     = 'RingCentral RSS - Convert RingCentral Message Store Results to RSS'
   s.description = 'Convert RingCentral Message Store Results to RSS'
   s.authors     = ['John Wang']
