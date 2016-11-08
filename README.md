@@ -33,7 +33,7 @@ client = RingCentralSdk.new [...]
 client.authorize [...]
 
 res = client.http.get do |req|
-  req.url = 'account/~/extension/~/message-store'
+  req.url 'account/~/extension/~/message-store'
   req.params['direction'] = 'Outbound'
   req.params['messageType'] = 'SMS'
 end
