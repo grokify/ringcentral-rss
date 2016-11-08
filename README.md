@@ -13,6 +13,8 @@ RingCentral RSS
 
 Ruby library to create XML syndication feeds for RingCentral `message-store` REST API responses.
 
+This library was originally created in response to a question on (archiving RingCentral SMS data using Smarsh via a RSS feed](https://devcommunity.ringcentral.com/ringcentraldev/topics/archive-sms-using-rss).
+
 ## Usage
 
 ```ruby
@@ -30,6 +32,13 @@ xml = rc_feed.feed.to_xml
 
 xml = RingCentral::RSS::AtomFeed.new(res).feed.to_xml
 ```
+
+## Demo Scripts
+
+Demo scripts are located in the [`scripts` directory of the GitHub repo](https://github.com/ringcentral-ruby/ringcentral-rss-ruby/tree/master/scripts). The following demos are included:
+
+* CLI script to retrieve `message-store` endpoint and print out XML
+* Sinatra web service to display XML
 
 ### Change Log
 

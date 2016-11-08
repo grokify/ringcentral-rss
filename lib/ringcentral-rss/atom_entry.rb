@@ -10,9 +10,7 @@ module RingCentral
       end
 
       def load_message(data)
-        unless data.is_a?(Hash)
-          raise 'Data is not a hash'
-        end
+        raise 'Data is not a hash' unless data.is_a? Hash
 
         @entry = Atom::Entry.new do |e|
           e.title = build_title data
@@ -24,20 +22,16 @@ module RingCentral
       end
 
       def build_title(data)
-        unless data.is_a?(Hash)
-          raise 'Data is not a hash'
-        end
+        raise 'Data is not a hash' unless data.is_a? Hash
 
         parts = []
 
         if data.key?('to') && (data['to'].length > 0) && data['to'][0]['phoneNumber']
           to_phone_number = "#{data['to'][0]['phoneNumber']}"
-          if to_phone_number.length > 0
-            parts << "To: #{to_phone_number}"
-          end
+          parts << "To: #{to_phone_number}" unless to_phone_number.empty?
         end
 
-        if data.key?('from') && data['from']['phoneNumber'].length > 0
+        if data.key?('from') && !data['from']['phoneNumber'].empty?
           from_phone_number = "#{data['from']['phoneNumber']}"
           parts << "From: #{from_phone_number}"
         end
