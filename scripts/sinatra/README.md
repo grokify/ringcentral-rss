@@ -1,6 +1,8 @@
 RingCentral RSS Sinatra Example
 ===============================
 
+This is a simple Sinatra service that will render RingCentral `message-store` API endpoint in XML and JSON.
+
 ## Installation
 
 ```bash
