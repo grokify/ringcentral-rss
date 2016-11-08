@@ -15,9 +15,20 @@ Ruby library to create XML syndication feeds for RingCentral `message-store` RES
 
 This library was originally created in response to a question on (archiving RingCentral SMS data using Smarsh via a RSS feed](https://devcommunity.ringcentral.com/ringcentraldev/topics/archive-sms-using-rss).
 
+## Installation
+
+```bash
+gem install ringcentral-rss
+```
+
+While `ringcentral_sdk` isn't strictly required for this SDK, it does build feeds based on the `Faraday::Response` objects returned by the SDK.
+
 ## Usage
 
 ```ruby
+require 'ringcentral-rss'
+require 'ringcentral_sdk'
+
 client = RingCentralSdk.new [...]
 client.authorize [...]
 
