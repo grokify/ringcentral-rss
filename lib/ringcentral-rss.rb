@@ -3,6 +3,6 @@ require 'ringcentral-rss/atom_feed'
 
 module RingCentral
   module RSS
-    VERSION = '0.0.1'
+    VERSION = '0.0.1'.freeze
   end
 end
