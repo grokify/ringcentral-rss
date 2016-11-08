@@ -20,8 +20,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'ratom', '~> 0', '>= 0.9.0'
 
-  s.add_development_dependency 'coveralls'
-  s.add_development_dependency 'rake'
-  s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'test-unit'
+  s.add_development_dependency 'coveralls', '~> 0'
+  s.add_development_dependency 'rake', '~> 11'
+  s.add_development_dependency 'simplecov', '~> 0'
+  s.add_development_dependency 'test-unit', '~> 3'
 end
