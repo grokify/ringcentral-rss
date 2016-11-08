@@ -69,15 +69,15 @@ RingCentral RSS &copy; 2016 by John Wang
  [downloads-link]: https://rubygems.org/gems/ringcentral-rss
  [build-status-svg]: https://api.travis-ci.org/ringcentral-ruby/ringcentral-rss-ruby.svg?branch=master
  [build-status-link]: https://travis-ci.org/ringcentral-ruby/ringcentral-rss-ruby
- [coverage-status-svg]: https://coveralls.io/repos/grokify/ringcentral-rss-ruby/badge.svg?branch=master
- [coverage-status-link]: https://coveralls.io/r/grokify/ringcentral-rss-ruby?branch=master
- [dependency-status-svg]: https://gemnasium.com/grokify/ringcentral-rss-ruby.svg
- [dependency-status-link]: https://gemnasium.com/grokify/ringcentral-rss-ruby
- [codeclimate-status-svg]: https://codeclimate.com/github/grokify/ringcentral-rss-ruby/badges/gpa.svg
- [codeclimate-status-link]: https://codeclimate.com/github/grokify/ringcentral-rss-ruby
- [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/grokify/ringcentral-rss-ruby/badges/quality-score.png?b=master
- [scrutinizer-status-link]: https://scrutinizer-ci.com/g/grokify/ringcentral-rss-ruby/?branch=master
+ [coverage-status-svg]: https://coveralls.io/repos/ringcentral-ruby/ringcentral-rss-ruby/badge.svg?branch=master
+ [coverage-status-link]: https://coveralls.io/r/ringcentral-ruby/ringcentral-rss-ruby?branch=master
+ [dependency-status-svg]: https://gemnasium.com/ringcentral-ruby/ringcentral-rss-ruby.svg
+ [dependency-status-link]: https://gemnasium.com/ringcentral-ruby/ringcentral-rss-ruby
+ [codeclimate-status-svg]: https://codeclimate.com/github/ringcentral-ruby/ringcentral-rss-ruby/badges/gpa.svg
+ [codeclimate-status-link]: https://codeclimate.com/github/ringcentral-ruby/ringcentral-rss-ruby
+ [scrutinizer-status-svg]: https://scrutinizer-ci.com/g/ringcentral-ruby/ringcentral-rss-ruby/badges/quality-score.png?b=master
+ [scrutinizer-status-link]: https://scrutinizer-ci.com/g/ringcentral-ruby/ringcentral-rss-ruby/?branch=master
  [docs-rubydoc-svg]: https://img.shields.io/badge/docs-rubydoc-blue.svg
  [docs-rubydoc-link]: http://www.rubydoc.info/gems/ringcentral-rss/
  [license-svg]: https://img.shields.io/badge/license-MIT-blue.svg
- [license-link]: https://github.com/grokify/ringcentral-rss-ruby/blob/master/LICENSE.md
+ [license-link]: https://github.com/ringcentral-ruby/ringcentral-rss-ruby/blob/master/LICENSE.md
