@@ -55,9 +55,9 @@ Demo scripts are located in the [`scripts` directory of the GitHub repo](https:/
 
 The genesis of this is the requirement to have RingCentral SMS messages available via a RSS feed. There are 3 ways to accomplish this:
 
-1. Have a proxy feed that always retrieves the message-store API response and converts it to RSS
-1. Have a script that polls the message-store API and publishes to a remote feed
-1. Have a script that subscribes to the message-store eventFilter and publishes to a remote feed
+1. Have a proxy feed that always retrieves the `message-store` API response and converts it to RSS
+1. Have a script that subscribes to the `message-store` eventFilter and publishes to a remote feed
+1. Have a script that polls the `message-store` API and publishes to a remote feed
 
 The library code will convert RingCentral message-store API response and message objects into an XML feed. The included Sinatra web service will host this as a proxy feed (option #1 above).
 
