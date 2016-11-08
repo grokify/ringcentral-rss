@@ -1,0 +1,6 @@
+source ENV['GEM_SOURCE'] || "https://rubygems.org"
+
+gem 'multi_json'
+gem 'ringcentral-rss'
+gem 'ringcentral_sdk'
+gem 'sinatra'

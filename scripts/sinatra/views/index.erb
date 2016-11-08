@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <meta charset='UTF-8'>
+  <title>Ruby RSS Example Server</title>
+  <body>
+    <h1>RingCentral RSS Example Server</h1>
+
+    <p>This demo provides a message-store API proxy that reformats the response using Atom XML. The following "message-store" Sinatra web end points to the RingCentral REST API endpoint "/restapi/v1.0/account/~/extension/~/message-store"</p>
+
+    <ul>
+      <li><a href="/message-store">/message-store</a> (XML)</li>
+      <li><a href="/message-store.json">/message-store.json</a> (JSON is natively returned by API)</li>
+    </ul>
+
+    <p>Feel free to use any query params for the `message-store` endpoint, e.g:</p>
+
+    <ul>
+      <li><a href="/message-store?dateFrom=2016-01-01T00:00:00Z&amp;direction=Inbound&amp;messageType=SMS">/message-store?dateFrom=2016-01-01T00:00:00Z&amp;direction=Inbound&amp;messageType=SMS</a></li>
+    </ul>
+
+    <p>For more info see the GitHub repo: <a href="https://github.com/ringcentral-ruby/ringcentral-rss">https://github.com/ringcentral-ruby/ringcentral-rss</a></p>
+
+  </body>
+</html>
