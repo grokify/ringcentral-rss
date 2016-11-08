@@ -53,7 +53,7 @@ Demo scripts are located in the [`scripts` directory of the GitHub repo](https:/
 
 ## Background
 
-The genesis of this is the requirement to have RingCentral SMS messages available via a RSS feed. There are 3 ways to accomplish this:s
+The genesis of this is the requirement to have RingCentral SMS messages available via a RSS feed. There are 3 ways to accomplish this:
 
 1. Have a proxy feed that always retrieves the message-store API response and converts it to RSS
 1. Have a script that polls the message-store API and publishes to a remote feed
