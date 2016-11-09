@@ -18,10 +18,10 @@ res = client.http.get do |req|
   req.params['direction'] = 'Inbound'
   req.params['messageType'] = 'SMS'
   req.params['dateFrom'] = '2016-01-01T00:00:00Z'
-  req.headers['Accept'] = 'application/xml'
+  req.headers['Accept'] = 'application/json'
 end
 
 atom = RingCentral::RSS::AtomFeed.new res
-puts atom.feed.to_xml
+puts atom.to_xml
 
 puts "DONE"
