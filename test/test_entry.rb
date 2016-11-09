@@ -13,6 +13,7 @@ class RingCentralRSSEntryTest < Test::Unit::TestCase
       'type' => 'SMS',
       'lastModifiedTime' => '2015-01-01T00:00:00+0000'
     }
+
     entry = RingCentral::RSS::AtomEntry.new message
     xml = entry.entry.to_xml
 
@@ -26,6 +27,5 @@ class RingCentralRSSEntryTest < Test::Unit::TestCase
     doc.xpath('//title').each do |el|
       assert_equal entry.build_title(message), el.text
     end
-
   end
 end

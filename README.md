@@ -39,9 +39,9 @@ res = client.http.get do |req|
 end
 
 rc_feed = RingCentral::RSS::AtomFeed.new res
-xml = rc_feed.feed.to_xml
+xml = rc_feed.to_xml
 
-xml = RingCentral::RSS::AtomFeed.new(res).feed.to_xml
+xml = RingCentral::RSS::AtomFeed.new(res).to_xml
 ```
 
 ## Demo Scripts

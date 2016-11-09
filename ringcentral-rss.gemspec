@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'ratom', '~> 0', '>= 0.9.0'
 
   s.add_development_dependency 'coveralls', '~> 0'
+  s.add_development_dependency 'faraday', '~> 0.9'
   s.add_development_dependency 'nokogiri', '~> 1.6'
   s.add_development_dependency 'rake', '~> 11'
   s.add_development_dependency 'simplecov', '~> 0'

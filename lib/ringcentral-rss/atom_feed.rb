@@ -11,6 +11,7 @@ module RingCentral
         else
           @feed_name = 'RingCentral Feed'
         end
+        @feed = nil
         load_message_store_response(response) unless response.nil?
       end
 
@@ -23,6 +24,10 @@ module RingCentral
             f.entries << RingCentral::RSS::AtomEntry.new(message).entry
           end
         end
+      end
+
+      def to_xml
+        (!@feed.nil? && @feed.is_a?(Atom::Feed)) ? @feed.to_xml : nil
       end
     end
   end
