@@ -58,5 +58,14 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
     doc.xpath('//feed/entry/summary').each do |el|
       assert_equal message['subject'], el.text
     end
+
+    feed = RingCentral::RSS::AtomFeed.new res, feed_name: 'Awesome Feed'
+    xml = feed.to_xml
+    doc = Nokogiri::XML xml
+    doc.remove_namespaces!
+
+    doc.xpath('//feed/title').each do |el|
+      assert_equal 'Awesome Feed', el.text
+    end
   end
 end
