@@ -29,7 +29,7 @@ module RingCentral
       end
 
       def to_xml
-        (!@feed.nil? && @feed.is_a?(Atom::Feed)) ? @feed.to_xml : nil
+        !@feed.nil? && @feed.is_a?(Atom::Feed) ? @feed.to_xml : nil
       end
     end
   end

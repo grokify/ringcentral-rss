@@ -27,17 +27,27 @@ module RingCentral
 
         parts = []
 
-        if data.key?('to') && !data['to'].empty? && data['to'][0]['phoneNumber']
-          to_phone_number = data['to'][0]['phoneNumber'].to_s
-          parts << "To: #{to_phone_number}" unless to_phone_number.empty?
-        end
+        to = to_phone_number data
+        parts << "To: #{to}" unless to.empty?
 
-        if data.key?('from') && !data['from']['phoneNumber'].empty?
-          from_phone_number = data['from']['phoneNumber'].to_s
-          parts << "From: #{from_phone_number}"
-        end
+        from = from_phone_number data
+        parts << "From: #{from}" unless from.nil?
 
         "[#{data['direction']} #{data['type']}] " + parts.join('; ')
+      end
+
+      def to_phone_number(data, index = 0)
+        if data.key?('to') && !data['to'].empty? && data['to'][index]['phoneNumber']
+          return data['to'][0]['phoneNumber'].to_s
+        end
+        nil
+      end
+
+      def from_phone_number(data)
+        if data.key?('from') && !data['from']['phoneNumber'].empty?
+          return data['from']['phoneNumber'].to_s
+        end
+        nil
       end
     end
   end
