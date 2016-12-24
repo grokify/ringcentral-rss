@@ -17,7 +17,7 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
 
   TEST_XML_TIME = '2016-11-09T06:46:16+00:00'.freeze
 
-  def test_main
+  def get_test_feed_main
     body = {
       'uri' => 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/~/extension/~/message-store',
       'records' => [TEST_MESSAGE]
@@ -38,13 +38,21 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
 
     feed.load_message_store_response res
 
-    xml = feed.to_xml
-
-    doc = Nokogiri::XML xml
+    doc = Nokogiri::XML feed.to_xml
     doc.remove_namespaces!
+    {
+      body: body,
+      doc: doc,
+      res: res
+    }
+  end
+
+  def test_main
+    test_data = get_test_feed_main
+    doc = test_data[:doc]
 
     doc.xpath('//feed/link').each do |el|
-      assert_equal body['uri'], el.attribute('href').value
+      assert_equal test_data[:body]['uri'], el.attribute('href').value
     end
 
     doc.xpath('//feed/title').each do |el|
@@ -58,8 +66,12 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
     doc.xpath('//feed/entry/summary').each do |el|
       assert_equal TEST_MESSAGE['subject'], el.text
     end
+  end
 
-    feed = RingCentral::RSS::AtomFeed.new res, feed_name: 'Awesome Feed'
+  def test_feed_name
+    test_data = get_test_feed_main
+    
+    feed = RingCentral::RSS::AtomFeed.new test_data[:res], feed_name: 'Awesome Feed'
     xml = feed.to_xml
     doc = Nokogiri::XML xml
     doc.remove_namespaces!
