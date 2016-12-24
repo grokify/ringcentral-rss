@@ -18,8 +18,8 @@ module RingCentral
       def load_message_store_response(response)
         @feed = Atom::Feed.new do |f|
           f.title = @feed_name
-          f.links << Atom::Link.new(href: "#{response.body['uri']}")
-          f.updated = Time.parse("#{response.headers['date']}")
+          f.links << Atom::Link.new(href: response.body['uri'].to_s)
+          f.updated = Time.parse(response.headers['date'].to_s)
           response.body['records'].each do |message|
             f.entries << RingCentral::RSS::AtomEntry.new(message).entry
           end

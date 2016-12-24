@@ -24,4 +24,4 @@ end
 atom = RingCentral::RSS::AtomFeed.new res
 puts atom.to_xml
 
-puts "DONE"
+puts 'DONE'

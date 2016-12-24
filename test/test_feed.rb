@@ -24,7 +24,7 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
     }
 
     stubs = Faraday::Adapter::Test::Stubs.new do |stub|
-      stub.get('/message-store') { |env| [200, headers, body] }
+      stub.get('/message-store') { [200, headers, body] }
     end
 
     test = Faraday.new do |builder|

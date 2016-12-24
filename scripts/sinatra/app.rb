@@ -23,7 +23,7 @@ get '/message-store' do
     req.params = request.params
   end
   response['Content-Type'] = 'application/xml'
-  xml = RingCentral::RSS::AtomFeed.new(res).feed.to_xml
+  RingCentral::RSS::AtomFeed.new(res).feed.to_xml
 end
 
 get '/message-store.json' do
@@ -32,5 +32,5 @@ get '/message-store.json' do
     req.params = request.params
   end
   response['Content-Type'] = 'application/json'
-  json = MultiJson.encode res.body, pretty: true
+  MultiJson.encode res.body, pretty: true
 end
