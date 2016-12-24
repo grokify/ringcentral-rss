@@ -17,21 +17,25 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
 
   TEST_XML_TIME = '2016-11-09T06:46:16+00:00'.freeze
 
+  def faraday_client(body)
+    stubs = Faraday::Adapter::Test::Stubs.new do |stub|
+      stub.get('/message-store') { [200, TEST_HEADERS, body] }
+    end
+
+    Faraday.new do |builder|
+      builder.adapter :test, stubs
+    end
+  end
+
   def data_for_tests
     body = {
       'uri' => 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/~/extension/~/message-store',
       'records' => [TEST_MESSAGE]
     }
 
-    stubs = Faraday::Adapter::Test::Stubs.new do |stub|
-      stub.get('/message-store') { [200, TEST_HEADERS, body] }
-    end
+    client = faraday_client body
 
-    test = Faraday.new do |builder|
-      builder.adapter :test, stubs
-    end
-
-    res = test.get '/message-store'
+    res = client.get '/message-store'
     {
       body: body,
       doc: res_to_doc(res),
