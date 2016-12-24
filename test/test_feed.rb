@@ -6,12 +6,12 @@ require 'ringcentral-rss'
 class RingCentralRSSFeedTest < Test::Unit::TestCase
 
   def test_main
-    headers = {'date' => 'Wed, 09 Nov 2016 06:46:16 GMT'}
+    headers = { 'date' => 'Wed, 09 Nov 2016 06:46:16 GMT' }
     xml_time = '2016-11-09T06:46:16+00:00'
 
     message = {
-      'to' => [{'phoneNumber' => '+16505551212'}],
-      'from' => {'phoneNumber' => '+14155551212'},
+      'to' => [{ 'phoneNumber' => '+16505551212' }],
+      'from' => { 'phoneNumber' => '+14155551212' },
       'subject' => 'hello world!',
       'direction' => 'Inbound',
       'type' => 'SMS',
@@ -24,7 +24,7 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
     }
 
     stubs = Faraday::Adapter::Test::Stubs.new do |stub|
-      stub.get('/message-store') { |env| [200, headers, body] }
+      stub.get('/message-store') { [200, headers, body] }
     end
 
     test = Faraday.new do |builder|
