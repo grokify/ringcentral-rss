@@ -1,6 +1,8 @@
 RingCentral RSS
 ===============
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/55162b9810e14dae95dfc7f45ce452eb)](https://www.codacy.com/app/ringcentral-ruby/ringcentral-rss-ruby?utm_source=github.com&utm_medium=referral&utm_content=ringcentral-ruby/ringcentral-rss-ruby&utm_campaign=badger)
+
 [![Gem Version][gem-version-svg]][gem-version-link]
 [![Build Status][build-status-svg]][build-status-link]
 [![Coverage Status][coverage-status-svg]][coverage-status-link]
