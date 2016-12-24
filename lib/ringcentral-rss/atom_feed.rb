@@ -2,11 +2,13 @@ require 'atom'
 
 module RingCentral
   module RSS
+    # Represents an Atom feed which loads records via RingCentral
+    # message-store responses
     class AtomFeed
       attr_accessor :feed
 
       def initialize(response = nil, opts = {})
-        if opts.key?(:feed_name) && opts[:feed_name]
+        if opts.key? :feed_name
           @feed_name = opts[:feed_name]
         else
           @feed_name = 'RingCentral Feed'

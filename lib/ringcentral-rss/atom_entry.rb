@@ -27,7 +27,7 @@ module RingCentral
 
         parts = []
 
-        if data.key?('to') && (!data['to'].empty?) && data['to'][0]['phoneNumber']
+        if data.key?('to') && !data['to'].empty? && data['to'][0]['phoneNumber']
           to_phone_number = data['to'][0]['phoneNumber'].to_s
           parts << "To: #{to_phone_number}" unless to_phone_number.empty?
         end
