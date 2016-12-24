@@ -3,11 +3,10 @@ require 'ringcentral-rss'
 require 'nokogiri'
 
 class RingCentralRSSEntryTest < Test::Unit::TestCase
-
   def test_main
     message = {
-      'to' => [{'phoneNumber' => '+16505551212'}],
-      'from' => {'phoneNumber' => '+14155551212'},
+      'to' => [{ 'phoneNumber' => '+16505551212' }],
+      'from' => { 'phoneNumber' => '+14155551212' },
       'subject' => 'hello world!',
       'direction' => 'Inbound',
       'type' => 'SMS',
