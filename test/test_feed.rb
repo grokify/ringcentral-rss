@@ -4,7 +4,6 @@ require 'nokogiri'
 require 'ringcentral-rss'
 
 class RingCentralRSSFeedTest < Test::Unit::TestCase
-
   def test_main
     headers = { 'date' => 'Wed, 09 Nov 2016 06:46:16 GMT' }
     xml_time = '2016-11-09T06:46:16+00:00'
@@ -20,7 +19,7 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
 
     body = {
       'uri' => 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/~/extension/~/message-store',
-      'records' => [ message ]
+      'records' => [message]
     }
 
     stubs = Faraday::Adapter::Test::Stubs.new do |stub|

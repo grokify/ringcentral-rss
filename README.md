@@ -1,10 +1,9 @@
 RingCentral RSS
 ===============
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/55162b9810e14dae95dfc7f45ce452eb)](https://www.codacy.com/app/ringcentral-ruby/ringcentral-rss-ruby?utm_source=github.com&utm_medium=referral&utm_content=ringcentral-ruby/ringcentral-rss-ruby&utm_campaign=badger)
-
 [![Gem Version][gem-version-svg]][gem-version-link]
 [![Build Status][build-status-svg]][build-status-link]
+[![Codacy Badge][codacy-svg]][codacy-link]
 [![Coverage Status][coverage-status-svg]][coverage-status-link]
 [![Dependency Status][dependency-status-svg]][dependency-status-link]
 [![Code Climate][codeclimate-status-svg]][codeclimate-status-link]
@@ -101,6 +100,8 @@ RingCentral RSS &copy; 2016 by John Wang
  [downloads-link]: https://rubygems.org/gems/ringcentral-rss
  [build-status-svg]: https://api.travis-ci.org/ringcentral-ruby/ringcentral-rss-ruby.svg?branch=master
  [build-status-link]: https://travis-ci.org/ringcentral-ruby/ringcentral-rss-ruby
+ [codacy-svg]: https://api.codacy.com/project/badge/Grade/55162b9810e14dae95dfc7f45ce452eb
+ [codacy-link]: https://www.codacy.com/app/ringcentral-ruby/ringcentral-rss-ruby
  [coverage-status-svg]: https://coveralls.io/repos/ringcentral-ruby/ringcentral-rss-ruby/badge.svg?branch=master
  [coverage-status-link]: https://coveralls.io/r/ringcentral-ruby/ringcentral-rss-ruby?branch=master
  [dependency-status-svg]: https://gemnasium.com/ringcentral-ruby/ringcentral-rss-ruby.svg
