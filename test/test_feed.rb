@@ -17,7 +17,7 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
 
   TEST_XML_TIME = '2016-11-09T06:46:16+00:00'.freeze
 
-  def get_test_feed_main
+  def data_for_tests
     body = {
       'uri' => 'https://platform.devtest.ringcentral.com/restapi/v1.0/account/~/extension/~/message-store',
       'records' => [TEST_MESSAGE]
@@ -48,7 +48,7 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
   end
 
   def test_main
-    test_data = get_test_feed_main
+    test_data = data_for_tests
     doc = test_data[:doc]
 
     doc.xpath('//feed/link').each do |el|
@@ -69,8 +69,8 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
   end
 
   def test_feed_name
-    test_data = get_test_feed_main
-    
+    test_data = data_for_tests
+
     feed = RingCentral::RSS::AtomFeed.new test_data[:res], feed_name: 'Awesome Feed'
     xml = feed.to_xml
     doc = Nokogiri::XML xml
