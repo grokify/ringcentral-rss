@@ -2,6 +2,7 @@ require 'atom'
 
 module RingCentral
   module RSS
+    # Represents an Atom Entry for a feed
     class AtomEntry
       attr_accessor :entry
 
@@ -26,13 +27,13 @@ module RingCentral
 
         parts = []
 
-        if data.key?('to') && (data['to'].length > 0) && data['to'][0]['phoneNumber']
-          to_phone_number = "#{data['to'][0]['phoneNumber']}"
+        if data.key?('to') && (!data['to'].empty?) && data['to'][0]['phoneNumber']
+          to_phone_number = data['to'][0]['phoneNumber'].to_s
           parts << "To: #{to_phone_number}" unless to_phone_number.empty?
         end
 
         if data.key?('from') && !data['from']['phoneNumber'].empty?
-          from_phone_number = "#{data['from']['phoneNumber']}"
+          from_phone_number = data['from']['phoneNumber'].to_s
           parts << "From: #{from_phone_number}"
         end
 
