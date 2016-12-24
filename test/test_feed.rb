@@ -32,19 +32,26 @@ class RingCentralRSSFeedTest < Test::Unit::TestCase
     end
 
     res = test.get '/message-store'
+    {
+      body: body,
+      doc: res_to_doc(res),
+      res: res
+    }
+  end
 
+  def res_to_doc(res)
     feed = RingCentral::RSS::AtomFeed.new
-    assert_equal nil, feed.to_xml
 
     feed.load_message_store_response res
 
     doc = Nokogiri::XML feed.to_xml
     doc.remove_namespaces!
-    {
-      body: body,
-      doc: doc,
-      res: res
-    }
+    doc
+  end
+
+  def test_nil
+    feed = RingCentral::RSS::AtomFeed.new
+    assert_equal nil, feed.to_xml
   end
 
   def test_main
